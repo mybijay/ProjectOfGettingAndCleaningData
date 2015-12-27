@@ -15,7 +15,7 @@ y_test <- read.table("UCI HAR Dataset\\test\\y_test.txt")
 subject_test <- read.table("UCI HAR Dataset\\test\\subject_test.txt")
 
 # row merge training and test samples - append all rows in single data table - x data
-x_xis_data <- rbind(x_train, x_test)
+x_axis_data <- rbind(x_train, x_test)
 
 #  row merge - append all rows in single data table - Y data
 y_axis_data <- rbind(y_train, y_test)
@@ -35,11 +35,11 @@ features_with_mean_and_sd <- grep("-(mean|std)\\(\\)", features[, 2])
 #features[features_with_mean_and_sd, 2]
 
 # Extracts only the measurements on the mean and standard deviation for each measurement.
-x_xis_data_with_mean_and_sd <- x_xis_data[, features_with_mean_and_sd]
+x_axis_data_with_mean_and_sd <- x_axis_data[, features_with_mean_and_sd]
 
 
 #Appropriately labels the data set with descriptive variable names.
-names(x_xis_data_with_mean_and_sd) <- features[features_with_mean_and_sd, 2]
+names(x_axis_data_with_mean_and_sd) <- features[features_with_mean_and_sd, 2]
 
 # 3.Uses descriptive activity names to name the activities in the data set
 
@@ -61,7 +61,7 @@ names(subject_data) <- "subject"
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 #Combine all data
 
-all_data <- cbind(x_xis_data_with_mean_and_sd, y_axis_data, subject_data)
+all_data <- cbind(x_axis_data_with_mean_and_sd, y_axis_data, subject_data)
 
 #check number of columns
 length(colnames(all_data))
