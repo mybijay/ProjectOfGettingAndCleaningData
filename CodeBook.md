@@ -15,7 +15,6 @@ ddply() from plyr package is used to simplify the coding
 * Source data from downloaded files stored in `x_train`, `y_train`, `x_test`, `y_test`, `subject_train` and `subject_test` variables
 * Merged data is stored in `x_axis_data`, `y_axis_data` and `subject_data` 
 * `features` contains the correct names for the `x_axis_data` dataset
-* x_axis_data_with_mean_and_sd contains the column name with mean and sd
+* 'x_axis_data_with_mean_and_sd' contains the column name with mean and sd
 * All data is merged into `all_data` 
-* Average data required is stored in averages_data
-* Finally, `averages_data` contains the relevant averages which will be later stored in a `.txt` file. `ddply()` from the plyr package is used to apply `colMeans()` and ease the development.
+* Average data required is stored in 'averages_data'
